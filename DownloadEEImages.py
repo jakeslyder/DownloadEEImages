@@ -351,6 +351,12 @@ class EEDownloader(Tk):
         #l = d['available']
         statTxt = "{} of {} items available.".format(avail,d['downloadCount'])
         ordStatLabel.configure(text=statTxt,anchor="center")
+        
+        #Also update the status message
+        now = datetime.now()
+        current_time = now.strftime("%H:%M:%S")
+        lab = "Status Checked at {}.".format(current_time)
+        stageLabel.configure(text=lab,foreground="black")
     
     #Create a text file of download URLs for use in other download application
     def toTxt(self,label,outputFile):
